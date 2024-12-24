@@ -479,6 +479,17 @@ class ChessGamesCollection:
     BASE_DIR = Path(__file__).resolve().parents[1]
     ECO_PATH = BASE_DIR / "resources" / "openings.csv"
     STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILE
+    
+    def _ensure_stockfish_executable(self):
+        """Ensure Stockfish has executable permissions on Linux systems"""
+        if sys.platform != 'win32':
+            try:
+             
+                current_perms = os.stat(self.STOCKFISH_PATH).st_mode
+                os.chmod(self.STOCKFISH_PATH, current_perms | 0o755)  # rwxr-xr-x
+            except Exception as e:
+                print(f"Could not set Stockfish permissions: {e}")
+
 
     def __init__(self, games_pgn: StringIO, user: str):
         """
