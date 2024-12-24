@@ -12,7 +12,7 @@ src/__pycache__/
 *.swo
 .history/
 
-resources/stockfish-windows-x86-64-avx2.exe
+
 
 .env
 .env.local

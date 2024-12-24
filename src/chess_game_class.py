@@ -469,35 +469,14 @@ class ChessGamesCollection:
     A collection of ChessGame objects that can be analyzed using Stockfish engine
     """
 
-    if sys.platform == 'win32':
-        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-        STOCKFISH_FILENAME = "stockfish-windows-x86-64-avx2.exe"
-    else:
-        STOCKFISH_FILENAME = "stockfish-ubuntu-x86-64-avx2"
-
+    
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+    STOCKFISH_FILE = "stockfish-windows-x86-64-avx2.exe"
+    
     BASE_DIR = Path(__file__).resolve().parents[1]
     ECO_PATH = BASE_DIR / "resources" / "openings.csv"
-    STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILENAME
+    STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILE
 
-    def get_stockfish_path(self):
-        """Get the appropriate Stockfish path, handling Streamlit's environment"""
-        if sys.platform == 'win32':
-            return str(self.STOCKFISH_PATH)
-        
-        stockfish_data = (self.BASE_DIR / "resources" / self.STOCKFISH_FILENAME).read_bytes()
-        
-        tmp = NamedTemporaryFile(delete=False)
-        tmp.write(stockfish_data)
-        tmp.close()
-        
-        os.chmod(tmp.name, 0o755)
-        
-        return tmp.name
-
-    def __init__(self):
-        self.temp_stockfish = None
-        self.temp_stockfish = self.get_stockfish_path()
-        
     def __init__(self, games_pgn: StringIO, user: str):
         """
         Initializes a new chess games collection
