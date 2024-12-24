@@ -5,7 +5,7 @@ import chess.pgn
 from pathlib import Path
 import asyncio
 from collections import namedtuple
-from chess_game_helpers import *
+from .chess_game_helpers import *
 from io import StringIO
 import json
 
@@ -471,7 +471,7 @@ class ChessGamesCollection:
     A collection of ChessGame objects that can be analyzed using Stockfish engine
     """
 
-    BASE_DIR = Path(__file__).resolve().parent
+    BASE_DIR = Path(__file__).resolve().parents[1]
     ECO_PATH = BASE_DIR / "resources" / "openings.csv"
     STOCKFISH_PATH = BASE_DIR / "resources" / "stockfish-windows-x86-64-avx2.exe"
 
