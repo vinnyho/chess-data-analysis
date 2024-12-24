@@ -127,13 +127,13 @@ pip install -r requirements.txt
 
 ---
 ## Improvemnts
-- **Better Phase Evaluation**: Dynamic phase evaluations of opening/middlegame/endgame based on piece activation/value
-- **Better Aggression Evaluation**: Add forks/pins/King safety to try and analyze playstyle better
+- **Better Phase Evaluation**: Dynamic phase evaluations of opening/middlegame/endgame based on piece activation/value.
+- **Better Aggression Evaluation**: Add forks/pins/King safety to try and analyze playstyle better.
 
 ---
   ## Contribution
 
-Contributions are welcomed
+Contributions are welcomed.
 
 ---
 
