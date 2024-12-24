@@ -25,7 +25,7 @@ A Python application that analyzes chess games using the Stockfish engine to pro
 
 ```bash
 git clone https://github.com/vinny-ho/chess-data-analysis.git
-cd chess-analyzer
+cd chess-data-analysis-main
 ```
 
 ### 2. Install Dependencies
