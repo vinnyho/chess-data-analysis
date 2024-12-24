@@ -10,10 +10,6 @@ from io import StringIO
 import json
 import sys
 
-if sys.platform == 'win32':
-    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-
-
 
 Elo = namedtuple("Elo", ["user_elo", "opponent_elo"])
 
@@ -473,10 +469,17 @@ class ChessGamesCollection:
     A collection of ChessGame objects that can be analyzed using Stockfish engine
     """
 
+    if sys.platform == 'win32':
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+        STOCKFISH_FILENAME = "stockfish-windows-x86-64-avx2.exe"
+    else:
+        # For Linux/Ubuntu
+        STOCKFISH_FILENAME = "stockfish-ubuntu-x86-64-avx2"
+
     BASE_DIR = Path(__file__).resolve().parents[1]
     ECO_PATH = BASE_DIR / "resources" / "openings.csv"
-    STOCKFISH_PATH = BASE_DIR / "resources" / "stockfish-windows-x86-64-avx2.exe"
-
+    STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILENAME
+    
     def __init__(self, games_pgn: StringIO, user: str):
         """
         Initializes a new chess games collection
