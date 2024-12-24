@@ -8,12 +8,14 @@ from collections import namedtuple
 from .chess_game_helpers import *
 from io import StringIO
 import json
+import sys
 
-asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
 
 
 Elo = namedtuple("Elo", ["user_elo", "opponent_elo"])
-
 
 class ChessGame:
     """
