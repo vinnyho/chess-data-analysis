@@ -116,12 +116,6 @@ pip install -r requirements.txt
 
 ---
 
-## Contribution
-
-Contributions are welcomed
-
----
-
 
 ## Libraries Used
 
@@ -135,7 +129,15 @@ Contributions are welcomed
 ## Improvemnts
 - **Better Phase Evaluation**: Dynamic phase evaluations of opening/middlegame/endgame based on piece activation/value
 - **Better Aggression Evaluation**: Add forks/pins/King safety to try and analyze playstyle better
-  
+
+---
+  ## Contribution
+
+Contributions are welcomed
+
+---
+
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
