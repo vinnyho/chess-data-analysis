@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 from typing import List, Dict, Tuple, Optional
 from plotly.graph_objects import Figure
-from chess_game_class import ChessGame, ChessGamesCollection
+from .chess_game_class import ChessGame
 
 
 class ChessDataFrame:

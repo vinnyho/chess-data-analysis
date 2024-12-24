@@ -1,4 +1,4 @@
-# Python
+
 __pycache__/
 *.py[cod]
 *.so
@@ -6,21 +6,17 @@ __pycache__/
 venv/
 env/
 src/__pycache__/
-
-# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 .history/
 
-# Project specific
 resources/stockfish-windows-x86-64-avx2.exe
 
-# Environment
 .env
 .env.local
 
-# Windows
+
 desktop.ini
 Thumbs.db

@@ -1,8 +1,8 @@
-from chess_game_class import *
-from chess_stat_visualizer import *
+
 import streamlit as st
 from io import StringIO
-
+from .chess_game_class import *
+from .chess_stat_visualizer import *
 
 def display_title_and_upload():
     st.title("Chess Data Analysis")
