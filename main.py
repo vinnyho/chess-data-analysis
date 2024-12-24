@@ -1,5 +1,5 @@
 from src.chess_visualizer_helpers import *
-
+from src.chess_game_class import *
 
 def run_user_interface():
     chess_game_collection = None
