@@ -471,15 +471,15 @@ class ChessGamesCollection:
 
     if sys.platform == 'win32':
         asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-        STOCKFISH_FILENAME = "stockfish-windows-x86-64-avx2.exe"
+        STOCKFISH_FILE = "stockfish-windows-x86-64-avx2.exe"
     else:
-        # For Linux/Ubuntu
-        STOCKFISH_FILENAME = "stockfish-ubuntu-x86-64-avx2"
+        
+        STOCKFISH_FILE = "stockfish-ubuntu-x86-64-avx2"
 
     BASE_DIR = Path(__file__).resolve().parents[1]
     ECO_PATH = BASE_DIR / "resources" / "openings.csv"
-    STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILENAME
-    
+    STOCKFISH_PATH = BASE_DIR / "resources" / STOCKFISH_FILE
+
     def __init__(self, games_pgn: StringIO, user: str):
         """
         Initializes a new chess games collection
