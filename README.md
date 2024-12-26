@@ -126,7 +126,7 @@ pip install -r requirements.txt
 - **Streamlit**: For building web application interface.
 
 ---
-## Improvemnts
+## Improvements
 - **Better Phase Evaluation**: Dynamic phase evaluations of opening/middlegame/endgame based on piece activation/value.
 - **Better Aggression Evaluation**: Add forks/pins/King safety to try and analyze playstyle better.
 
